@@ -1,5 +1,4 @@
-import React from "react";
-import "./Sidebar.css";
+import React, { useEffect, useState } from "react";
 import { Avatar, IconButton } from "@mui/material";
 import {
   Chat,
@@ -9,6 +8,18 @@ import {
 } from "@mui/icons-material";
 import SidebarChats from "./SidebarChats";
 const Sidebar = () => {
+  const [rooms, setRooms] = useState([]);
+
+  // useEffect(() => {
+  //   db.collection("rooms").onSnapshot((snapshot) => {
+  //     setRooms(
+  //       snapshot.docs.map((doc) => ({
+  //         id: doc.id,
+  //         data: doc.data(),
+  //       }))
+  //     );
+  //   });
+  // }, []);
   return (
     <div className="sidebar">
       <div className="sidebar_header">
@@ -33,9 +44,9 @@ const Sidebar = () => {
       </div>
       <div className="sidebar_chats">
         <SidebarChats addNewChat />
-        <SidebarChats />
-        <SidebarChats />
-        <SidebarChats />
+        {rooms.map((room) => (
+          <SidebarChats id={room.id} key={room.id} name={room.data.name} />
+        ))}
       </div>
     </div>
   );
