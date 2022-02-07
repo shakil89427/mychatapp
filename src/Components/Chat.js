@@ -55,12 +55,14 @@ const Chat = () => {
         <Avatar src={`https://avatars.dicebear.com/api/human/${id}.svg`} />
         <div className="chat_header_info">
           <h3>{roomName}</h3>
-          <p>
-            Last seen{" "}
-            {new Date(
-              messages[messages.length - 1]?.timestamp?.toDate()
-            ).toUTCString()}
-          </p>
+          {messages[messages.length - 1] && (
+            <p>
+              Last seen{" "}
+              {new Date(
+                messages[messages.length - 1]?.timestamp?.toDate()
+              ).toUTCString()}
+            </p>
+          )}
         </div>
         <div className="chat_header_right">
           <IconButton>

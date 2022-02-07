@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Avatar, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import {
   Chat,
   DonutLarge,
@@ -29,7 +29,6 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar_header">
-        {/* <Avatar  /> */}
         <img src={user?.photoURL} alt="" />
         <div className="sidebar_header_right">
           <IconButton>
