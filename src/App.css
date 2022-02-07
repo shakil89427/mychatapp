@@ -23,6 +23,11 @@
   padding: 20px;
   border-right: 1px solid lightgray;
 }
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 .sidebar_header_right {
   display: flex;
   align-items: center;
@@ -50,6 +55,8 @@
 }
 .sidebar_searchcontainer > input {
   border: none;
+  width: 100%;
+  outline: none;
   margin-left: 10px;
 }
 .sidebar_searchcontainer > .MuiSvgIcon-root {
@@ -59,6 +66,10 @@
 .sidebar_chats {
   flex: 1;
   background-color: white;
+  overflow: scroll;
+}
+.sidebar_chats::-webkit-scrollbar {
+  display: none;
 }
 .sidebarchats {
   display: flex;
@@ -68,6 +79,10 @@
 }
 .sidebarchats:hover {
   background-color: rgba(185, 173, 173, 0.315);
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 .sidebarchatinfo {
   margin-left: 15px;
@@ -109,14 +124,22 @@
   background-repeat: repeat;
   background-position: center;
   padding: 30px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.chat_body::-webkit-scrollbar {
+  display: none;
 }
 .chat_message {
   position: relative;
   font-size: 16px;
+  margin-bottom: 20px;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
-  width: fit-content;
+  max-width: 60%;
+  word-wrap: break-word;
 }
 .chat_name {
   position: absolute;
@@ -132,27 +155,63 @@
   margin-left: auto;
   background-color: #dcf8c6;
 }
+.sender {
+  margin-right: auto;
+}
 .chat_footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 62px;
+  height: 55px;
   border-top: 1px solid lightgray;
 }
 .chat_footer > form {
   display: flex;
+  align-items: center;
   flex: 1;
+  max-height: 40px;
 }
 .chat_footer > form > input {
   flex: 1;
   border-radius: 30px;
   padding: 10px;
   border: none;
+  outline: none;
 }
 .chat_footer > form > button {
-  display: none;
+  border: none;
+  margin-top: 5px;
 }
 .chat_footer .MuiSvgIcon-root {
   padding: 10px;
   color: gray;
+}
+.login {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.login_container {
+  padding: 100px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.32);
+}
+.login_container img {
+  object-fit: contain;
+  height: 100px;
+  margin-bottom: 40px;
+}
+.login_container Button {
+  margin-top: 50px;
+  text-transform: inherit;
+  background-color: #0a8d48;
+  color: white;
+}
+.login_container Button:hover {
+  background-color: #0a8d48;
+  color: white;
 }
